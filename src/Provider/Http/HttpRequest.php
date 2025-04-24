@@ -2,6 +2,7 @@
 
 namespace Http;
 
+use Helper\APIResponse;
 use Http\HttpMethod;
 use Http\Middleware;
 use Http\Controller;
@@ -14,6 +15,7 @@ class HttpRequest {
     //RequestURI
     private $request_uri;
 
+    private $app_route = [];
     public function __construct($http_method,$request_uri){
 
         $this->http_method = $http_method;
@@ -22,6 +24,9 @@ class HttpRequest {
 
     //HttpGet Method With Controller
     public function Get($uri,Controller $controller){
+
+        //AddRouteAray
+        array_push($this->app_route,strtok($uri,"?"));
 
         //Allow Quary Strings
         $uri_valid_length = strpos($this->request_uri,"?");
@@ -45,6 +50,10 @@ class HttpRequest {
 
     public function GetWithMiddleware($uri,Middleware $middleware,Controller $controller){
 
+         //AddRouteAray
+         array_push($this->app_route,strtok($uri,"?"));
+
+
         //Allow Quary Strings
         $uri_valid_length = strpos($this->request_uri,"?");
         $pocess_uri = substr($this->request_uri,0,$uri_valid_length);
@@ -65,6 +74,9 @@ class HttpRequest {
     //HttpPost Method With Controller
     public function Post($uri,Controller $controller){
 
+         //AddRouteAray
+         array_push($this->app_route,strtok($uri,"?"));
+
         //Sample URL -> /product (Allow)
         if(
              ($this->http_method === HttpMethod::POST->value  && $this->request_uri === $uri)
@@ -80,6 +92,9 @@ class HttpRequest {
 
     public function PostWithMiddleware($uri,Middleware $middleware,Controller $controller){
 
+         //AddRouteAray
+         array_push($this->app_route,strtok($uri,"?"));
+
         //Sample URL -> /product (Allow)
         if(
              ($this->http_method === HttpMethod::POST->value  && $this->request_uri === $uri)
@@ -91,6 +106,17 @@ class HttpRequest {
     }
     
 
+    //Other Route
+
+    public function WildCardRoute($uri)   {
+
+        $allow_uri = strtok($uri,"?");
+        if(
+         !in_array($allow_uri,$this->app_route))
+        {
+            APIResponse::Fail("Invalid route");
+        }
+    }
 
 
 

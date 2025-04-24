@@ -16,7 +16,7 @@ use Middleware\AuthMiddleware;
 
 $app = new HttpRequest($_SERVER["REQUEST_METHOD"],$_SERVER["REQUEST_URI"]);
 
-
+// http request pipeline start
 $app->Post("/signup",SignupController::getInstance());
 $app->Post("/create-user",UserCreateController::getInstance());
 
@@ -27,3 +27,7 @@ $app->PostWithMiddleware("/withdraw",AuthMiddleware::getInstance(),WithdrawContr
 $app->Get("/balance",WalletBalanceController::getInstance());
 $app->Get("/transactions",TransactionHistoryController::getInstance());
 
+//wildCard route
+$app->WildCardRoute($_SERVER["REQUEST_URI"]);
+
+// http request pipeline end

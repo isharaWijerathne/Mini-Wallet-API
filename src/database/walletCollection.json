@@ -23,11 +23,12 @@
     },
     {
         "user_id": 3,
-        "balance": 700,
+        "balance": 750,
         "transaction_history": {
             "2025-04-24 22:41:17": "Account Created",
             "2025-04-24 22:43:27": "DEPOSITE 750",
-            "2025-04-24 22:44:02": "WITHDRAW 50"
+            "2025-04-24 22:44:02": "WITHDRAW 50",
+            "2025-04-24 23:06:46": "DEPOSITE 50"
         }
     }
 ]
