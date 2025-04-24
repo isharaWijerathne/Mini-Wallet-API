@@ -2,7 +2,9 @@
     "name": "dgd/http",
     "autoload": {
         "psr-4": {
-            "Http\\": "Provider/Http/"
+            "Http\\": "Provider/Http/",
+            "Controller\\" : "Controller",
+            "Middleware\\" : "Middleware"
         }
     },
     "require": {}

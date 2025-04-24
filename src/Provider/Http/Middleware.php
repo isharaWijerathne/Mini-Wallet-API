@@ -2,13 +2,13 @@
 
 namespace Http;
 
-use Http\IController;
+use Http\Controller;
 use Http\MiddlewareResponce;
 
 abstract class Middleware{
 
     //Templete Method
-    public function Next(IController $controller){
+    public  function  Next(Controller $controller){
 
         //Middlware Fun Run
         
@@ -28,4 +28,7 @@ abstract class Middleware{
 
     //Fail Responce
     abstract public function MiddlewareFailResponce();
+
+    //For Make Middlware Static
+    abstract static  function getInstance(): Middleware;
 }

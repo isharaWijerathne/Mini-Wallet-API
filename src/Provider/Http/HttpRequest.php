@@ -4,7 +4,7 @@ namespace Http;
 
 use Http\HttpMethod;
 use Http\Middleware;
-use Http\IController;
+use Http\Controller;
 
 class HttpRequest {
 
@@ -21,7 +21,7 @@ class HttpRequest {
     }
 
     //HttpGet Method With Controller
-    public function Get($uri,IController $controller){
+    public function Get($uri,Controller $controller){
 
         //Allow Quary Strings
         $uri_valid_length = strpos($this->request_uri,"?");
@@ -43,7 +43,7 @@ class HttpRequest {
 
     //HttpGet Method With Controller Wiht Middlware
 
-    public function GetWithMiddleware($uri,Middleware $middleware,IController $controller){
+    public function GetWithMiddleware($uri,Middleware $middleware,Controller $controller){
 
         //Allow Quary Strings
         $uri_valid_length = strpos($this->request_uri,"?");
@@ -63,7 +63,7 @@ class HttpRequest {
 
 
     //HttpPost Method With Controller
-    public function Post($uri,IController $controller){
+    public function Post($uri,Controller $controller){
 
         //Sample URL -> /product (Allow)
         if(
@@ -78,7 +78,7 @@ class HttpRequest {
 
     //HttpPost Method With Controller Wiht Middlware
 
-    public function PostWithMiddleware($uri,Middleware $middleware,IController $controller){
+    public function PostWithMiddleware($uri,Middleware $middleware,Controller $controller){
 
         //Sample URL -> /product (Allow)
         if(
