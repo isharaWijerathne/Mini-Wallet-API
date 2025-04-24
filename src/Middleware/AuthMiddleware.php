@@ -31,8 +31,8 @@ use Http\MiddlewareResponce;
     public  function MiddlewareAction() : MiddlewareResponce {
 
 
-        $headers = explode(" ",$_SERVER["HTTP_AUTHORIZATION"]);
-        echo $headers[1];
+        // $headers = explode(" ",$_SERVER["HTTP_AUTHORIZATION"]);
+        // echo $headers[1];
 
 
 
@@ -49,7 +49,8 @@ use Http\MiddlewareResponce;
             $received_token = $headers[1];
 
             //Check Bear token
-            if($headers[1] != "Bearer"){
+            if($headers[0] != "Bearer"){
+                echo "text err" . $headers[1];
                 throw new Exception("AUTH_FAIL");
             }
 

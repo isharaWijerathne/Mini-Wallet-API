@@ -21,4 +21,16 @@ class Validator {
         }
     }
 
+    public static function FloatValidator($input,$error_message){
+        if(!is_float($input)){
+            throw new Exception($error_message);
+        }
+    }
+
+    public static function IntValidator($input,$error_message){
+        if(!is_int($input)){
+            throw new Exception($error_message);
+        }
+    }
+
 }

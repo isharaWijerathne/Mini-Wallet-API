@@ -4,5 +4,11 @@
         "username": "apple1",
         "password": "$2y$10$Fu.i4H12OjIKfe7dp7Fgt.SMS7aW3JDQid9JRqt2sFdDu3nZvOckO",
         "token": ""
+    },
+    {
+        "user_id": 2,
+        "username": "apple2",
+        "password": "$2y$10$V.h6gLfm2H7heQb2altLK.z9yVqMLVcUDWlmeYdgj7apys5tfVZ\/m",
+        "token": "f87772bb5f3d85e3"
     }
 ]

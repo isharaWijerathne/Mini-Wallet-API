@@ -1,9 +1,20 @@
 [
     {
         "user_id": 1,
-        "balance": 0,
+        "balance": 16.8,
         "transaction_history": {
-            "2025-04-24 20:01:42": "Account Created"
+            "2025-04-24 20:01:42": "Account Created",
+            "2025-04-24 20:53:11": "DEPOSITE 5",
+            "2025-04-24 20:53:25": "DEPOSITE 5.9",
+            "2025-04-24 20:55:24": "DEPOSITE 5.9"
+        }
+    },
+    {
+        "user_id": 2,
+        "balance": 5.9,
+        "transaction_history": {
+            "2025-04-24 21:02:04": "Account Created",
+            "2025-04-24 21:06:13": "DEPOSITE 5.9"
         }
     }
 ]
