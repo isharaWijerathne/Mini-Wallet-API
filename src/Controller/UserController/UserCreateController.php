@@ -54,20 +54,34 @@ class UserCreateController extends Controller{
 
                 //Check Username Exist
 
-                foreach($user_data as $key => $value){
 
-                    if($value["username"] === $input_filed['username']) {
-                        //Throw Error
-                        throw new Exception("username already exist");
+                if(!empty($user_data)){
+
+                    foreach($user_data as $key => $value){
+
+                        if($value["username"] === $input_filed['username']) {
+                            //Throw Error
+                            throw new Exception("username already exist");
+                        }
                     }
                 }
+
+                
             }
             else {
                 $user_data = [];
             }
 
+            //User Id
+            //Default
+            $user_id = 1;
+            if( !empty($user_data) ){
+                $user_id = count($user_data) +1;
+            }
+
             //New User
             $new_user = [
+                "user_id" => $user_id,
                 "username" => $input_filed['username'],
                 "password" => $hash_password,
                 "token" => "",
