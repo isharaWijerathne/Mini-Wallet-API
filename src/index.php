@@ -6,6 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Controller\AuthController\SignupController;
 use Controller\UserController\UserCreateController;
 use Controller\WalletController\DepositController;
+use Controller\WalletController\WalletBalanceController;
 use Controller\WalletController\WithdrawController;
 use Http\HttpRequest;
 use Middleware\AuthMiddleware;
@@ -21,4 +22,7 @@ $app->Post("/create-user",UserCreateController::getInstance());
 //Wallert Controller
 $app->PostWithMiddleware("/deposit",AuthMiddleware::getInstance(),DepositController::getInstance());
 $app->PostWithMiddleware("/withdraw",AuthMiddleware::getInstance(),WithdrawController::getInstance());
+
+$app->Get("/balance",WalletBalanceController::getInstance());
+
 
