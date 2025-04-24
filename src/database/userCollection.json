@@ -1,14 +1,8 @@
 [
     {
         "user_id": 1,
-        "username": "SYSTEMs",
-        "password": "$2y$10$C8QSoHIab6C6\/tNSHzMuPesXIJrFAAvYn0L.cH9.\/fG3L0UWoWUym",
+        "username": "apple1",
+        "password": "$2y$10$Fu.i4H12OjIKfe7dp7Fgt.SMS7aW3JDQid9JRqt2sFdDu3nZvOckO",
         "token": ""
-    },
-    {
-        "user_id": 2,
-        "username": "apple",
-        "password": "$2y$10$YCJlg\/ezHw8cBwNgOPaOcO0QGWwT9tuTu6xAntc9BykqjSZBb4q.S",
-        "token": "4e95662fba5889fd"
     }
 ]

@@ -44,6 +44,7 @@ class UserCreateController extends Controller{
             //File Path
             $user_collection =  $_SERVER['DOCUMENT_ROOT'] ."/database/userCollection.json";
 
+
             
              $user_data = [];
 
@@ -90,11 +91,36 @@ class UserCreateController extends Controller{
             //Add New User To Collection
             $user_data[] = $new_user;
             
-            //Save Database
+            //Save Database user
             file_put_contents($user_collection, json_encode($user_data, JSON_PRETTY_PRINT));
 
+            //Create Wallet and DB Operation
+            $wallet_collection =  $_SERVER['DOCUMENT_ROOT'] ."/database/walletCollection.json";
+
+            $new_wallet = [
+                "user_id" => $user_id,
+                "balance" => 0,
+                "transaction_history" => [
+                    date("Y-m-d H:i:s") => "Account Created"
+                ],
+                
+            ];
+
+
+            $wallet_data = [];
+            if(file_exists($wallet_collection)){
+
+                $wallet_data_json = file_get_contents($wallet_collection);
+                $wallet_data = json_decode($wallet_data_json,true);
+
+            }
+
+            $wallet_data[] = $new_wallet;
+
+            file_put_contents($wallet_collection, json_encode($wallet_data, JSON_PRETTY_PRINT));
+
             header("Content-Type: application/json");
-            $response = ['status' => 'success',"message" => "User created Successfully"];
+            $response = ['status' => 'success',"message" => "User and wallet created Successfully"];
             http_response_code(200);
             echo json_encode($response);
 

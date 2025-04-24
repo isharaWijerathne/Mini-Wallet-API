@@ -1,0 +1,9 @@
+[
+    {
+        "user_id": 1,
+        "balance": 0,
+        "transaction_history": {
+            "2025-04-24 20:01:42": "Account Created"
+        }
+    }
+]
