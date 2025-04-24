@@ -3,6 +3,7 @@
 namespace Controller\UserController;
 
 use Exception;
+use Helper\APIResponse;
 use Helper\Validator;
 use Http\Controller;
 
@@ -119,17 +120,11 @@ class UserCreateController extends Controller{
 
             file_put_contents($wallet_collection, json_encode($wallet_data, JSON_PRETTY_PRINT));
 
-            header("Content-Type: application/json");
-            $response = ['status' => 'success',"message" => "User and wallet created Successfully"];
-            http_response_code(200);
-            echo json_encode($response);
+            APIResponse::Success("User and wallet created Successfully");
 
         } catch (Exception $th) {
             
-            header("Content-Type: application/json");
-            $response = ['status' => 'fail',"message" => $th->getMessage()];
-            http_response_code(404);
-            echo json_encode($response);
+            APIResponse::Fail($th->getMessage());
         }
         
     }

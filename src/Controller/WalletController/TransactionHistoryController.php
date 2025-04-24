@@ -2,6 +2,7 @@
 namespace Controller\WalletController;
 
 use Exception;
+use Helper\APIResponse;
 use Http\Controller;
 
 class TransactionHistoryController extends Controller {
@@ -63,23 +64,21 @@ class TransactionHistoryController extends Controller {
 
 
             if($is_transaction_histoy_availabe){
-                header("Content-Type: application/json");
-                $response = ['status' => 'success',"message" => [
+                
+
+                APIResponse::Success([
                     "user_id" => intval($user_id) ,
-                    "transaction_history" => $transaction_histoy
-                ]];
-                http_response_code(200);
-                echo json_encode($response);
+                   "transaction_history" => $transaction_histoy
+                ]);
+
             }else {
                 throw new Exception("Invalid user_id");
             }
 
 
         } catch (Exception $th) {
-            header("Content-Type: application/json");
-            $response = ['status' => 'fail', "message" => $th->getMessage()];
-            http_response_code(404);
-            echo json_encode($response);
+            
+            APIResponse::Fail($th->getMessage());
         }
     }
 

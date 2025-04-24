@@ -3,6 +3,7 @@
 namespace Middleware;
 
 use Exception;
+use Helper\APIResponse;
 use Helper\Validator;
 use Http\Middleware;
 use Http\MiddlewareResponce;
@@ -22,10 +23,7 @@ use Http\MiddlewareResponce;
 
     public  function MiddlewareFailResponce(){
 
-        header("Content-Type: application/json");
-        $response = ['status' => 'fail',"message" => "auth fail"];
-        http_response_code(404);
-        echo json_encode($response);
+        APIResponse::Fail("auth fail");
     }
 
     public  function MiddlewareAction() : MiddlewareResponce {

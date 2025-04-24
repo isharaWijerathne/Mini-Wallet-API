@@ -1,7 +1,7 @@
 [
     {
         "user_id": 1,
-        "balance": 6,
+        "balance": 11,
         "transaction_history": {
             "2025-04-24 20:01:42": "Account Created",
             "2025-04-24 20:53:11": "DEPOSITE 5",
@@ -9,7 +9,8 @@
             "2025-04-24 20:55:24": "DEPOSITE 5.9",
             "2025-04-24 21:33:02": "WITHDRAW 0.8",
             "2025-04-24 21:34:01": "WITHDRAW 5",
-            "2025-04-24 21:41:09": "WITHDRAW 5"
+            "2025-04-24 21:41:09": "WITHDRAW 5",
+            "2025-04-24 22:29:02": "DEPOSITE 5"
         }
     },
     {
@@ -18,6 +19,15 @@
         "transaction_history": {
             "2025-04-24 21:02:04": "Account Created",
             "2025-04-24 21:06:13": "DEPOSITE 5.9"
+        }
+    },
+    {
+        "user_id": 3,
+        "balance": 700,
+        "transaction_history": {
+            "2025-04-24 22:41:17": "Account Created",
+            "2025-04-24 22:43:27": "DEPOSITE 750",
+            "2025-04-24 22:44:02": "WITHDRAW 50"
         }
     }
 ]

@@ -2,6 +2,7 @@
 namespace Controller\WalletController;
 
 use Exception;
+use Helper\APIResponse;
 use Helper\Validator;
 use Http\Controller;
 class WalletBalanceController extends Controller
@@ -64,23 +65,20 @@ class WalletBalanceController extends Controller
 
 
             if($is_balance_availabe){
-                header("Content-Type: application/json");
-                $response = ['status' => 'success',"message" => [
+               
+
+                APIResponse::Success([
                     "user_id" => intval($user_id) ,
                     "balance" => $account_balance
-                ]];
-                http_response_code(200);
-                echo json_encode($response);
+                ]);
+
             }else {
                 throw new Exception("Invalid user_id");
             }
 
 
         } catch (Exception $th) {
-            header("Content-Type: application/json");
-            $response = ['status' => 'fail', "message" => $th->getMessage()];
-            http_response_code(404);
-            echo json_encode($response);
+            APIResponse::Fail($th->getMessage());
         }
     }
 

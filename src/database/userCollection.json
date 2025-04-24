@@ -10,5 +10,11 @@
         "username": "apple2",
         "password": "$2y$10$V.h6gLfm2H7heQb2altLK.z9yVqMLVcUDWlmeYdgj7apys5tfVZ\/m",
         "token": "f87772bb5f3d85e3"
+    },
+    {
+        "user_id": 3,
+        "username": "dgdapps",
+        "password": "$2y$10$4pgu1TN.HIejcJRBKj71b.lKcQL8NBO\/qrz9LSd08AkTEc8izzmWC",
+        "token": "1b37ee724dad11ca"
     }
 ]

@@ -3,6 +3,7 @@
 namespace Controller\AuthController;
 
 use Exception;
+use Helper\APIResponse;
 use Http\Controller;
 use Helper\Validator;
 
@@ -97,13 +98,9 @@ class SignupController extends Controller {
                     file_put_contents($user_collection, json_encode($user_data, JSON_PRETTY_PRINT));
 
                     //Responce
-                    header("Content-Type: application/json");
-                    $response = ['status' => 'success',"message" => [
+                    APIResponse::Success([
                         "token" => $new_token
-    
-                    ]];
-                    http_response_code(200);
-                    echo json_encode($response);
+                    ]);
             }
             else {
                 //Auth Fail
@@ -112,10 +109,7 @@ class SignupController extends Controller {
 
 
         } catch (Exception $th) {
-            header("Content-Type: application/json");
-            $response = ['status' => 'fail',"message" => $th->getMessage()];
-            http_response_code(404);
-            echo json_encode($response);
+           APIResponse::Fail($th->getMessage());
         }
     }
 
