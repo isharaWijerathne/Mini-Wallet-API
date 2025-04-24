@@ -14,6 +14,7 @@ class ComposerStaticInitcd06dc9870822c586e7a6fa86b22ed5a
         'H' => 
         array (
             'Http\\' => 5,
+            'Helper\\' => 7,
         ),
         'C' => 
         array (
@@ -29,6 +30,10 @@ class ComposerStaticInitcd06dc9870822c586e7a6fa86b22ed5a
         'Http\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Provider/Http',
+        ),
+        'Helper\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Provider/Helper',
         ),
         'Controller\\' => 
         array (

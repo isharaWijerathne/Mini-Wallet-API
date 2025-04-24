@@ -14,4 +14,4 @@ $app = new HttpRequest($_SERVER["REQUEST_METHOD"],$_SERVER["REQUEST_URI"]);
 
 
 
-$app->PostWithMiddleware("/create-user",AuthMiddleware::getInstance(),UserCreateController::getInstance());
+$app->Post("/create-user",UserCreateController::getInstance());

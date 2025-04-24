@@ -1,0 +1,17 @@
+[
+    {
+        "username": "apple",
+        "password": "$2y$10$uJr7KZrIYtdmEr.xbQpvv.64xTgFKEzBYru\/R1CkmPJvSWs26kULW",
+        "token": ""
+    },
+    {
+        "username": "apple1",
+        "password": "$2y$10$YHyYxNnAozfGXtgaLXYHfOw9EU6tbD\/Jsc4C7VNu9zRktDLwG0Wyi",
+        "token": ""
+    },
+    {
+        "username": "apple2",
+        "password": "$2y$10$f7AYVmhQb86eq7P\/jsCVU.bFBWjPlq8X8PD6Q7ao.RMVGwuh4HZnG",
+        "token": ""
+    }
+]

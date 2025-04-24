@@ -7,7 +7,7 @@ use Http\MiddlewareResponce;
 
  class AuthMiddleware extends Middleware {
 
-    // 
+    // $instance, getInstance() and private constructer Used to Make Class Static
     private static $instance;
     private function __construct() {}
     public static function getInstance(): Middleware {
